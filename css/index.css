@@ -1,0 +1,424 @@
+/* HEADER */
+header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+#movieNavbar .navbar-nav {
+  border-bottom: 1px solid #ffffff;
+}
+
+#movieNavbar .navbar-nav .nav-item {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: white;
+  padding: 20px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  /* set vi tri position */
+  position: relative;
+}
+
+#movieNavbar .navbar-nav .nav-item:after {
+  content: "";
+  display: block;
+  height: 2px;
+
+  /* set width ve 0 để tạo hover */
+  width: 0;
+  /* #fbbd61,#ec7532 */
+  background: linear-gradient(to right, #fbbd61, #ec7532);
+  box-shadow: 0 0 20px 0 #fbbd61;
+
+  /* set vị trí position */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s;
+}
+
+#movieNavbar .navbar-nav .nav-item:hover:after {
+  width: 100%;
+}
+
+#movieNavbar .navbar-nav .nav-item.active:after {
+  width: 100%;
+}
+
+/* CAROUSEL */
+#movieCarousel .carousel-caption {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+#movieCarousel .carousel-caption .pg {
+  font-size: 13px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#movieCarousel .carousel-caption .btn-trailer {
+  background: linear-gradient(to right, #fbbd61, #ec7532);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 40px;
+
+  /* set vị trí cho thẻ cha */
+  position: relative;
+
+  /* che những phần dư ra khỏi button */
+  overflow: hidden;
+}
+
+#movieCarousel .carousel-caption .btn-trailer::before {
+  content: "";
+  height: 100%;
+  padding: 20px 40px;
+  background-color: #ec7532;
+
+  /* set width về 0 để tạo hover */
+  width: 0;
+
+  /* tạo độ xéo cho background */
+  transform: skew(30deg);
+  position: absolute;
+  top: 0;
+  left: -90px;
+
+  /* tạo hiệu ứng mượt */
+  transition: all 0.5s;
+
+  /* độ ưu tiên hiển thị */
+  z-index: 0;
+}
+
+#movieCarousel .carousel-caption .btn-trailer:hover::before {
+  width: 150%;
+}
+
+#movieCarousel .carousel-caption .btn-trailer i,
+#movieCarousel .carousel-caption .btn-trailer span {
+  z-index: 1;
+
+  /* set vị trí cho icon và text */
+  position: relative;
+}
+
+#movieCarousel .carousel-indicators {
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* ghi đè lên css của thư viện BS4 */
+  justify-content: left;
+  padding-left: 15px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#movieCarousel .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  border: 2px solid #ffffff;
+  background-color: transparent;
+}
+
+#movieCarousel .carousel-indicators li.active {
+  background-color: white;
+
+  /* đổ màu từ border cho tới content */
+  background-clip: border-box;
+}
+
+/* NEW IN */
+.newIn__img {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* tạo background cho overlay */
+  background: linear-gradient(to top, #ec7532, #fbbd61);
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.5;
+
+  /* tạo hiệu ứng */
+  transform: skew(30deg) translateX(-145%);
+
+  /* tạo hiệu ứng chuyển động mượt 
+    */
+  transition: all 0.5s;
+}
+
+.newIn__img:hover .overlay {
+  width: 200%;
+  transform: skew(30deg) translateX(-25%);
+}
+
+.newIn__play {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+
+  /* canh chỉnh nội dung vào giữa item */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* tạo hiệu ứng hover */
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.5s;
+}
+
+.newIn__img:hover .newIn__play {
+  opacity: 1;
+  transform: scale(1);
+}
+.newIn__text h2 {
+  font-size: 18px;
+}
+.newIn__icon i {
+  font-size: 12px;
+}
+#showTime {
+  padding-top: 50px;
+}
+.newIn__img {
+  padding-bottom: 20px;
+}
+.rate {
+  display: inline-block;
+  line-height: 33px;
+  height: 33px;
+  width: 33px;
+  border-radius: 50%;
+  text-align: center;
+}
+.tab-pane {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+#showTime .title {
+  color: #ec7532;
+}
+#showTime .full a {
+  color: #ec7532;
+  transition: all 0.5s;
+}
+#showTime .full a:hover {
+  color: black;
+}
+.nav-tabs .nav-link {
+  color: #4a4a4a;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.nav-tabs .nav-link.active {
+  color: #ec7532;
+  border-bottom: 3px solid #ec7532;
+}
+#newIn h2 {
+  width: 100%;
+  border-bottom: 1px solid #d8d8d8;
+  line-height: 1.4em;
+  margin: 0 0 10px;
+  padding: 0 0 20px;
+  position: relative;
+}
+#newIn h2::after {
+  position: absolute;
+  right: auto;
+  bottom: -1px;
+  display: block;
+  width: 125px;
+  height: 4px;
+  content: "";
+  background-image: linear-gradient(to right, #fbbd61, #ec7532);
+}
+
+ul {
+  list-style: none;
+}
+
+.footer_container {
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer__get {
+  width: 25%;
+}
+.footer__get h3 {
+  color: #ec7532;
+}
+
+footer a {
+  transition: all 0.5s;
+  color: white;
+}
+footer ul li a:hover {
+  color: #fbbd61;
+}
+footer .fab {
+  margin: 0px 10px;
+  transition: all 0.5s;
+  color: rgba(255, 255, 255, 0.3);
+}
+footer ul li a .fab:hover {
+  color: #fbbd61;
+}
+#contact h1 {
+  color: #ec7532;
+}
+.comingSoon__container {
+  background: #101010;
+  position: relative;
+  color: #fff;
+}
+.comingSoon__tittle {
+  width: 80%;
+  margin: 0 auto;
+}
+.comingSoon__content {
+  width: 80%;
+  margin: 0 auto;
+}
+.comingSoon_video a .fas {
+  font-size: 32px;
+  line-height: 75px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  text-align: center;
+  text-indent: 14px;
+  color: #fff;
+  border: 2px solid #ec7532;
+  border-radius: 50%;
+}
+#comingSoon h2 {
+  width: 100%;
+  border-bottom: 1px solid #d8d8d8;
+  line-height: 1.4em;
+  margin: 0 0 10px;
+  padding: 0 0 20px;
+  position: relative;
+}
+#comingSoon h2::after {
+  position: absolute;
+  right: auto;
+  bottom: -1px;
+  display: block;
+  width: 125px;
+  height: 4px;
+  content: "";
+  background-image: linear-gradient(to right, #fbbd61, #ec7532);
+}
+.slick-next,
+.slick-prev {
+  position: absolute;
+  top: 35%;
+
+  font-size: 0;
+  padding: 0;
+  border: none;
+}
+.slick-next:before,
+.slick-prev:before {
+  color: orange;
+}
+.comingSoon__img {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+.comingSoon__card {
+  width: 100%;
+  background: #101010;
+}
+.comingSoon__item {
+  opacity: 0.3;
+  padding: 0 20px;
+}
+.comingSoon__item:hover {
+  opacity: 1;
+  transition: all 0.5s;
+}
+..comingSoon__item:active {
+  opacity: 1;
+}
+.comingSoon__tittle h2 {
+  width: 100%;
+  border-bottom: 1px solid #333;
+  line-height: 1.4em;
+  margin: 0 0 10px;
+  padding: 0 0 20px;
+  position: relative;
+}
+.comingSoon__tittle h2::after {
+  position: absolute;
+  right: auto;
+  bottom: -1px;
+  display: block;
+  width: 125px;
+  height: 4px;
+  content: "";
+  background-image: linear-gradient(to right, #fbbd61, #ec7532);
+}
+.comingSoon__text span {
+  color: #ec7532;
+}
+.comingSoon__text a {
+  color: #ec7532;
+  transition: all 0.5s;
+}
+.comingSoon__text a:hover {
+  text-decoration: none;
+  color: #fbbd61;
+}
+.comingSoon__text {
+}
+.comingSoon_day {
+  font-size: 14px;
+  display: inline-block;
+  opacity: 0.75;
+  color: #fff;
+}
+.comingSoon__icon {
+  display: inline-block;
+}
+.comingSoon__item {
+  color: white;
+}
